@@ -1,0 +1,28 @@
+<h1>Here is a list of all our products in our <%=@category %> selection </h1>
+
+<h3>Product's List:</h3>
+
+<table>
+
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Price</th>
+			<th>Category</th>
+			<th colspan="3"></th>
+		</tr>
+	</thead>
+
+
+  	<tbody>
+
+		<% @products.each do |product| %>
+			<tr>
+				<td><%= product.name %></td>
+				<td><%= number_to_currency(product.price) %></td>
+				<td><%= product.category %></td>
+			</tr>
+
+		<% end %>
+	</tbody>
+</table>
